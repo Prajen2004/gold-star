@@ -95,15 +95,15 @@ with tab1:
             data.to_excel("Games_Stock.xlsx", index=False)
             with open("Games_Stock.xlsx", "rb") as file:
                 st.download_button("Download Excel", file, file_name="Games_Stock.xlsx")
-        elif export_option == "PDF":
-            from reportlab.platypus import SimpleDocTemplate, Table
-            from reportlab.lib.pagesizes import A4
-            doc = SimpleDocTemplate("Games_Stock.pdf", pagesize=A4)
-            table_data = [data.columns.tolist()] + data.values.tolist()
-            table = Table(table_data)
-            doc.build([table])
-            with open("Games_Stock.pdf", "rb") as file:
-                st.download_button("Download PDF", file, file_name="Games_Stock.pdf")
+        # elif export_option == "PDF":
+        #     from reportlab.platypus import SimpleDocTemplate, Table
+        #     from reportlab.lib.pagesizes import A4
+        #     doc = SimpleDocTemplate("Games_Stock.pdf", pagesize=A4)
+        #     table_data = [data.columns.tolist()] + data.values.tolist()
+        #     table = Table(table_data)
+        #     doc.build([table])
+        #     with open("Games_Stock.pdf", "rb") as file:
+        #         st.download_button("Download PDF", file, file_name="Games_Stock.pdf")
 
 
 # ---- TAB 2: Day-to-Day Sales (to be implemented) ----
